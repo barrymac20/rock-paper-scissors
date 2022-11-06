@@ -1,6 +1,8 @@
-const possibleAnswers = ["ROCK", "PAPER", "SCISSORS"] //Create variable for array of answers
-let playerScore = 0
-let computerScore =0
+//Create variable for array of answers
+const possibleAnswers = ["ROCK", "PAPER", "SCISSORS"]; 
+
+let playerScore = 0;
+let computerScore =0;
 
 
 //Get random answer
@@ -15,22 +17,19 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = prompt("Rock, Paper, or Scissors").toUpperCase();
   computerSelection = getComputerChoice();
 
-  if (
+  if (playerSelection === computerSelection) {
+    roundResult = "Draw";
+  }
+  else if (
     playerSelection === "ROCK" && computerSelection === "SCISSORS" || 
     playerSelection === "SCISSORS" && computerSelection === "PAPER" ||
     playerSelection === "PAPER" && computerSelection === "ROCK"
   ) {
     roundResult = "Player Wins";
     playerScore++;
-  } else if (
-    playerSelection === "ROCK" && computerSelection === "PAPER" || 
-    playerSelection === "SCISSORS" && computerSelection === "ROCK" ||
-    playerSelection === "PAPER" && computerSelection === "SCISSORS"
-  ) {
+  } else {
     roundResult = "Computer Wins";
     computerScore++;
-  } else {
-    roundResult = "Draw";
   }
   return roundResult;
   }
