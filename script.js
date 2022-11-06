@@ -53,7 +53,8 @@ function game() {
   } else {
     matchResult = "Draw Match";
   }
-  return matchResult;
+  // return matchResult;
+  console.log(matchResult)
 }
 
 game()
