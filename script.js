@@ -56,3 +56,5 @@ function game() {
   }
   return matchResult;
 }
+
+game()
