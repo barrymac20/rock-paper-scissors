@@ -1,16 +1,16 @@
 // Variables
+let playerScore = 0;
+let computerScore = 0;
 const possibleAnswers = ["ROCK", "PAPER", "SCISSORS"]; 
-const buttons = document.querySelectorAll('button').forEach(button => {
-  button.addEventListener('click', playRound)
-})
 const playerPick = document.getElementById('player-pick');
 const computerPick = document.getElementById('computer-pick');
 const roundResult = document.getElementById('round-result');
 const player = document.getElementById('player-score');
 const computer = document.getElementById('computer-score');
 const matchResult = document.getElementById('match-result');
-let playerScore = 0;
-let computerScore = 0;
+const images = document.querySelectorAll('img.selection').forEach(image => {
+  image.addEventListener('click', playRound)
+})
 
 // Get random answer for computer choice
 function getComputerChoice() {
@@ -20,8 +20,8 @@ function getComputerChoice() {
 
 // Play Round
 function playRound(e, computerSelection) {
-
-  playerSelection = e.target.value.toUpperCase();
+  // Set selection variables
+  playerSelection = e.target.alt.toUpperCase();
   computerSelection = getComputerChoice().toUpperCase();
 
   if (playerScore < 5 && computerScore < 5) {
@@ -30,9 +30,9 @@ function playRound(e, computerSelection) {
       roundWinner = "Draw";
       }
       else if (
-        playerSelection === "rock" && computerSelection === "scissors" || 
-        playerSelection === "scissors" && computerSelection === "paper" ||
-        playerSelection === "paper" && computerSelection === "rock"
+        playerSelection === "ROCK" && computerSelection === "SCISSORS" || 
+        playerSelection === "SCISSORS" && computerSelection === "PAPER" ||
+        playerSelection === "PAPER" && computerSelection === "ROCK"
       ) {
         roundWinner = `You Win - ${playerSelection} beats ${computerSelection}`;
         playerScore++;
@@ -50,14 +50,13 @@ function playRound(e, computerSelection) {
   if (playerScore === 5 || computerScore === 5) {
       announceWinner();
   }
-  
 }
 
 // Announce winner
 function announceWinner() {
-    if (playerScore === 5) {
+  if (playerScore === 5) {
     matchResult.textContent = 'You win the game'
-    } else {
-      matchResult.textContent = 'Computer Wins the game'
-    }
+  } else {
+    matchResult.textContent = 'Computer Wins the game'
+  }
 }

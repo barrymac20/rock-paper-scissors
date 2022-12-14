@@ -4,23 +4,55 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script type="text/javascript" src="script.js"></script> -->
+  <link rel="stylesheet" href="styles.css">
   <title>Rock - Paper - Scissors</title>
 </head>
+
 <body>
 
-  <button value="rock">ROCK</button>
-  <button value="paper">PAPER</button>
-  <button value="scissors">SCISSORS</button>
-  <br>
-  <br>
+  <header>
+    <h1>ROCK - PAPER - SCISSORS</h1>
+  </header>
 
-  <div id="player-pick"></div>
-  <div id="computer-pick"></div>
-  <div id="round-result"></div>
-  <div id="player-score"></div>
-  <div id="computer-score"></div>
-  <div id="match-result"></div>
+  <div class="buttons">
+    <div class="button-and-text">
+      <div class="box">
+        <img class="selection" src="images/rock.png" width="150px" alt="Rock">
+      </div>
+      <p class="text">
+        ROCK
+      </p>
+    </div>
+    <div class="button-and-text">
+      <div class="box">
+        <img class="selection"  src="images/paper.png" width="150px" alt="Paper"></a>
+      </div>
+      <p class="text">
+        PAPER
+      </p>
+    </div>
+    <div class="button-and-text">
+      <div class="box">
+        <img class="selection"  src="images/scissors.png" width="150px" alt="Scissors"></a>
+      </div>
+      <p class="text">
+        SCISSORS
+      </p>
+    </div>
+  </div>
+
+  <div class="game-information">
+    <p id="player-pick">1</p>
+    <p id="computer-pick">2</p>
+    <p id="round-result">3</p>
+    <p id="player-score">4</p>
+    <p id="computer-score">5</p>
+    <p id="match-result">6</p>
+  </div>
+
+  <footer>
+    <p>Copyright (c) Barry McCullough 2022</p>
+  </footer>
     
   <script src="script.js"></script>
 </body>
