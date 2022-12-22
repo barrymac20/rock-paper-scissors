@@ -8,9 +8,18 @@ const roundResult = document.getElementById('round-result');
 const player = document.getElementById('player-score');
 const computer = document.getElementById('computer-score');
 const matchResult = document.getElementById('match-result');
-const images = document.querySelectorAll('img.selection').forEach(image => {
-  image.addEventListener('click', playRound)
+const buttons = document.querySelectorAll('.button').forEach(button => {
+  button.addEventListener('click', playRound);;
+  button.addEventListener('click', buttonPressed)
 })
+
+// image changes visually when clicked
+function buttonPressed(e) {
+  e.target.classList.add('pressed');
+  setTimeout(() => {
+    e.target.classList.remove('pressed')
+  }, 100);
+}
 
 // Get random answer for computer choice
 function getComputerChoice() {
