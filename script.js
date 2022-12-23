@@ -5,6 +5,7 @@ const possibleAnswers = ["ROCK", "PAPER", "SCISSORS"];
 const playerPick = document.getElementById('player-pick');
 const computerPick = document.getElementById('computer-pick');
 const roundResult = document.getElementById('round-result');
+const resultReason = document.getElementById('result-reason');
 const player = document.getElementById('player-score');
 const computer = document.getElementById('computer-score');
 const matchResult = document.getElementById('match-result');
@@ -36,23 +37,29 @@ function playRound(e, computerSelection) {
   if (playerScore < 5 && computerScore < 5) {
       
     if (playerSelection === computerSelection) {
-      roundWinner = "Draw";
+      roundWinner = "This round is a Tie";
+      winnerReason = `${playerSelection} ties with ${computerSelection}`
       }
       else if (
         playerSelection === "ROCK" && computerSelection === "SCISSORS" || 
         playerSelection === "SCISSORS" && computerSelection === "PAPER" ||
         playerSelection === "PAPER" && computerSelection === "ROCK"
       ) {
-        roundWinner = `You Win - ${playerSelection} beats ${computerSelection}`;
+        roundWinner = `You Win This Round`;
+        winnerReason = `${playerSelection} beats ${computerSelection}`;
         playerScore++;
       } else {
-        roundWinner = `Computer Wins - ${computerSelection} beats ${playerSelection}`;
+        roundWinner = `Computer Wins This Round`;
+        winnerReason = `${computerSelection} beats ${playerSelection}`
         computerScore++;
       }
-      playerPick.textContent = `You picked: ${playerSelection}`
-      computerPick.textContent = `Computer picked: ${computerSelection}`
-      roundResult.textContent = `Round Result: ${roundWinner}`
-      player.textContent = `Your Score: ${playerScore}`
+      roundResult.textContent = `${roundWinner}`;
+      resultReason.textContent = `${winnerReason}`;
+      
+      playerPick.textContent = `${playerSelection}`;
+      computerPick.textContent = `${computerSelection}`;
+      
+      player.textContent = `Player Score: ${playerScore}`;
       computer.textContent = `Computer Score: ${computerScore}`;
   } 
     

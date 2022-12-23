@@ -14,28 +14,36 @@
     <h1>ROCK - PAPER - SCISSORS</h1>
   </header>
 
-  <div class="main">
-    <div class="buttons">
-      <div class="button">
-        <img class="selection" src="images/rock.png" width="150px" alt="Rock">
+  <div class="game-info">
+    <h2 id="round-result">3</h2>
+    <h3 id="result-reason">3</h3>
+    <div class="scoreboard">
+      <div class="player">
+        <p id="player-pick">?</p>
+        <p id="player-score">Player Score: 0</p>
       </div>
-      <div class="button">
-        <img class="selection"  src="images/paper.png" width="150px" alt="Paper"></a>
-      </div>
-      <div class="button">
-        <img class="selection"  src="images/scissors.png" width="150px" alt="Scissors"></a>
+      <div class="computer">
+        <p id="computer-pick">?</p>
+        <p id="computer-score">Computer Score: 0</p>
       </div>
     </div>
-
-    <div class="game-information">
-      <p id="player-pick">1</p>
-      <p id="computer-pick">2</p>
-      <p id="round-result">3</p>
-      <p id="player-score">4</p>
-      <p id="computer-score">5</p>
-      <p id="match-result">6</p>
+    <h1 id="match-result"></h1>
+  </div>
+    
+  <div class="buttons">
+    <div class="button">
+      <img class="selection" src="images/rock.png" width="150px" alt="Rock">
+    </div>
+    <div class="button">
+      <img class="selection"  src="images/paper.png" width="150px" alt="Paper"></a>
+    </div>
+    <div class="button">
+      <img class="selection"  src="images/scissors.png" width="150px" alt="Scissors"></a>
     </div>
   </div>
+
+
+
 
   <footer>
     <p>Copyright (c) barrymac20 2022</p>
